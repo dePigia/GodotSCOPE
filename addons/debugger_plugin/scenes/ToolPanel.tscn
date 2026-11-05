@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://hc03mv4idl1m"]
+
+[ext_resource type="Script" uid="uid://bysny1g1op1c7" path="res://addons/debugger_plugin/scripts/tool_panel.gd" id="1_hvecj"]
+
+[node name="ToolPanel" type="PanelContainer" unique_id=509274233]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hvecj")
+
+[node name="Label" type="Label" parent="." unique_id=2146545402]
+layout_mode = 2
+text = "PALLE"
+horizontal_alignment = 1
