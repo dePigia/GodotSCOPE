@@ -17,6 +17,16 @@ func _init(panel: Control) -> void:
     _panel_instance.config_changed.connect(_send_config_to_all)
 
 
+func _has_cupture(prefix: String) -> bool:
+    return prefix == CHANNEL
+
+
+func _send_config(session_id: int) -> void:
+    var session: EditorDebuggerSession = get_session(session_id)
+    if session.is_active():
+        session.send_message(MSG_CONFIG, _panel_instance.build_config())
+
+
 func _send_config_to_all() -> void:
     for i in get_sessions():
         if i.is_active(): 

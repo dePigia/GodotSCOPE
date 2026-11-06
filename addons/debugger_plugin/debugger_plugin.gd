@@ -5,7 +5,7 @@ extends EditorPlugin
 const AUTOLOAD_NAME: String = "Debug"
 const AUTOLOAD_SCRIPT: String = "res://addons/debugger_plugin/scripts/autoload/debugger.gd"
 const TOOL_PANEL: PackedScene = preload("res://addons/debugger_plugin/scenes/ToolPanel.tscn")
-const BRIDGE: Script = preload("res://addons/debugger_plugin/scripts/debugger_bridge.gd")
+const BRIDGE: Script = preload("res://addons/debugger_plugin/scripts/bridge/debugger_bridge.gd")
 
 
 var _panel_instance: Control

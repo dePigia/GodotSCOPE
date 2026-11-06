@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://hc03mv4idl1m"]
 
-[ext_resource type="Script" uid="uid://bysny1g1op1c7" path="res://addons/debugger_plugin/scripts/tool_panel.gd" id="1_hvecj"]
+[ext_resource type="Script" uid="uid://bysny1g1op1c7" path="res://addons/debugger_plugin/scripts/tool_panel/tool_panel.gd" id="1_hvecj"]
 [ext_resource type="Theme" uid="uid://bcg2t57nxh0sx" path="res://addons/debugger_plugin/theme/tool_panel_theme.tres" id="1_pj0bq"]
+[ext_resource type="Script" uid="uid://dngtf6mshnfwk" path="res://addons/debugger_plugin/scripts/tool_panel/tree.gd" id="3_v46h4"]
 
 [node name="ToolPanel" type="PanelContainer" unique_id=509274233]
 anchors_preset = 15
@@ -20,21 +21,39 @@ layout_mode = 2
 
 [node name="HystoryLabel" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1254729517]
 layout_mode = 2
-text = "Hystory"
+text = "LIVE"
 
 [node name="HystoryButton" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=161454451]
 layout_mode = 2
-text = "balllsss"
+text = "Back To Live"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=170910070]
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer" unique_id=324115945]
+layout_mode = 2
+theme = ExtResource("1_pj0bq")
+split_offsets = PackedInt32Array(46)
+split_offset = 46
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HSplitContainer" unique_id=1613725868]
 layout_mode = 2
 theme = ExtResource("1_pj0bq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1613725868]
+[node name="AddPropertyButton" type="Button" parent="VBoxContainer/HSplitContainer/VBoxContainer" unique_id=804136833]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme = ExtResource("1_pj0bq")
+text = "Add Property"
 
-[node name="AddPropertyButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=804136833]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HSplitContainer/VBoxContainer" unique_id=1972639480]
 layout_mode = 2
-theme = ExtResource("1_pj0bq")
-text = "palle"
+
+[node name="PropertyTree" type="Tree" parent="VBoxContainer/HSplitContainer/VBoxContainer" unique_id=1378645643]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+hide_root = true
+script = ExtResource("3_v46h4")
+
+[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer" unique_id=803840632]
+layout_mode = 2
+text = "pallllleee"

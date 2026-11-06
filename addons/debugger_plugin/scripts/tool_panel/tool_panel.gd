@@ -11,12 +11,17 @@ var rules: Array[Dictionary] = []
 
 var _check_every_n: int = 2
 var _live: bool = true
-var _picked_path: String = "" 
+var _picked_path: String = ""
+
+var _node_name: Label
+var _property_check: CheckBox
+var _property_name: Label
 
 
 @onready var hystory_label: Label = $VBoxContainer/HBoxContainer2/HystoryLabel
 @onready var hystory_button: Button = $VBoxContainer/HBoxContainer2/HystoryButton
-@onready var add_property_button: Button = $VBoxContainer/HBoxContainer/VBoxContainer/AddPropertyButton
+@onready var add_property_button: Button = $VBoxContainer/HSplitContainer/VBoxContainer/AddPropertyButton
+@onready var tree: Tree = $VBoxContainer/HSplitContainer/VBoxContainer/PropertyTree
 
 
 func _ready() -> void:
@@ -25,6 +30,9 @@ func _ready() -> void:
 	hystory_button.text = "Back To Live"
 
 	add_property_button.pressed.connect(_pick_node)
+
+	tree.watch_toggled.connect(_on_watch_toggled)
+	tree.watch_removed.connect(_on_watch_removed)
 
 
 func _pick_node() -> void:
@@ -70,4 +78,11 @@ func build_config() -> Array:
 		r.append([i, rules[i].series, rules[i].op, rules[i].value, rules[i].action])
 	
 	return [_check_every_n, w, r]
-	
+
+
+func _on_watch_toggled(index: int, enabled: bool) -> void:
+	pass
+
+
+func _on_watch_removed(index: int) -> void:
+	pass
