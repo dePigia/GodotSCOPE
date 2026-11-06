@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://hc03mv4idl1m"]
 
 [ext_resource type="Script" uid="uid://bysny1g1op1c7" path="res://addons/debugger_plugin/scripts/tool_panel.gd" id="1_hvecj"]
+[ext_resource type="Theme" uid="uid://bcg2t57nxh0sx" path="res://addons/debugger_plugin/theme/tool_panel_theme.tres" id="1_pj0bq"]
 
 [node name="ToolPanel" type="PanelContainer" unique_id=509274233]
 anchors_preset = 15
@@ -8,9 +9,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_pj0bq")
 script = ExtResource("1_hvecj")
 
-[node name="Label" type="Label" parent="." unique_id=2146545402]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1664906046]
 layout_mode = 2
-text = "PALLE"
-horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=659730183]
+layout_mode = 2
+
+[node name="HystoryLabel" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1254729517]
+layout_mode = 2
+text = "Hystory"
+
+[node name="HystoryButton" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=161454451]
+layout_mode = 2
+text = "balllsss"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=170910070]
+layout_mode = 2
+theme = ExtResource("1_pj0bq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1613725868]
+layout_mode = 2
+theme = ExtResource("1_pj0bq")
+
+[node name="AddPropertyButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=804136833]
+layout_mode = 2
+theme = ExtResource("1_pj0bq")
+text = "palle"
