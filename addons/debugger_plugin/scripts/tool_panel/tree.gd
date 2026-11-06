@@ -49,7 +49,13 @@ func set_watches(watches: Array) -> void:
             group = create_item(root)
             group.set_text(COL_NAME, _node_label(w.path))
 
-            if has_theme_icon("Node", "EditorIcons"):
+            if has_theme_icon("Node2D", "EditorIcons") and w.prop is Node2D:
+                group.set_icon(COL_NAME, get_theme_icon("Node2D", "EditorIcons"))
+            elif has_theme_icon("Control", "EditorIcons") and w.prop is Control:
+                group.set_icon(COL_NAME, get_theme_icon("CircleShape2D", "EditorIcons"))
+            elif has_theme_icon("Node3D", "EditorIcons") and w.prop is Node3D:
+                group.set_icon(COL_NAME, get_theme_icon("Node3D", "EditorIcons"))
+            elif has_theme_icon("Node", "EditorIcons") and w.prop is Node:
                 group.set_icon(COL_NAME, get_theme_icon("Node", "EditorIcons"))
             
             group.set_selectable(COL_NAME, false)

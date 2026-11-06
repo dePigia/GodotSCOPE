@@ -17,7 +17,7 @@ func _init(panel: Control) -> void:
     _panel_instance.config_changed.connect(_send_config_to_all)
 
 
-func _has_cupture(prefix: String) -> bool:
+func _has_capture(prefix: String) -> bool:
     return prefix == CHANNEL
 
 
