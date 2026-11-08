@@ -5,6 +5,8 @@ extends PanelContainer
 signal config_changed
 
 
+const HYSTORY_STORE: Script = preload("res://addons/debugger_plugin/editor/hystory_store.gd")
+
 const PROPERTY_TYPES: PackedInt32Array = [TYPE_INT, TYPE_FLOAT, TYPE_BOOL, TYPE_VECTOR2, TYPE_VECTOR3, TYPE_COLOR]
 const SETTING_SECTION: String = "debugger_plugin"
 const SETTING_SPLIT: String = "split_offset"
@@ -86,6 +88,18 @@ func _on_prop_picked(prop) -> void:
 		config_changed.emit()
 
 
+func build_config() -> Array:
+	var w: Array = []
+	for i in watches:
+		w.append([i.path, i.prop])
+
+	var r: Array = []
+	for i in rules.size():
+		r.append([i, rules[i].series, rules[i].op, rules[i].value, rules[i].action])
+	
+	return [_check_every_n, w, r]
+
+
 func _split_components(node: Node, prop_path: String) -> Array[String]:
 	if node == null:
 		return [prop_path]
@@ -107,19 +121,6 @@ func _has_swatch(path: String, prop: String) -> bool:
 			return true
 
 	return false
-
-
-func build_config() -> Array:
-	var w: Array = []
-	for i in watches:
-		w.append([i.path, i.prop])
-
-
-	var r: Array = []
-	for i in rules.size():
-		r.append([i, rules[i].series, rules[i].op, rules[i].value, rules[i].action])
-	
-	return [_check_every_n, w, r]
 
 
 func _on_watch_toggled(index: int, enabled: bool) -> void:

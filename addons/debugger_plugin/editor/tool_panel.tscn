@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://hc03mv4idl1m"]
 
-[ext_resource type="Script" uid="uid://bysny1g1op1c7" path="res://addons/debugger_plugin/scripts/tool_panel/tool_panel.gd" id="1_hvecj"]
-[ext_resource type="Theme" uid="uid://bcg2t57nxh0sx" path="res://addons/debugger_plugin/theme/tool_panel_theme.tres" id="1_pj0bq"]
-[ext_resource type="Script" uid="uid://dngtf6mshnfwk" path="res://addons/debugger_plugin/scripts/tool_panel/tree.gd" id="3_v46h4"]
+[ext_resource type="Theme" uid="uid://bcg2t57nxh0sx" path="res://addons/debugger_plugin/theme/tool_panel_theme.tres" id="1_elpvu"]
+[ext_resource type="Script" uid="uid://bysny1g1op1c7" path="res://addons/debugger_plugin/editor/tool_panel.gd" id="2_dpwiv"]
+[ext_resource type="Script" uid="uid://dngtf6mshnfwk" path="res://addons/debugger_plugin/editor/tree.gd" id="3_tglv5"]
 
 [node name="ToolPanel" type="PanelContainer" unique_id=509274233]
 anchors_preset = 15
@@ -11,8 +11,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme = ExtResource("1_pj0bq")
-script = ExtResource("1_hvecj")
+theme = ExtResource("1_elpvu")
+script = ExtResource("2_dpwiv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1664906046]
 layout_mode = 2
@@ -31,21 +31,21 @@ text = "Back To Live"
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer" unique_id=324115945]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("1_pj0bq")
-split_offsets = PackedInt32Array(-967)
-split_offset = -967
+theme = ExtResource("1_elpvu")
+split_offsets = PackedInt32Array(-954)
+split_offset = -954
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HSplitContainer" unique_id=1613725868]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
-theme = ExtResource("1_pj0bq")
+theme = ExtResource("1_elpvu")
 
 [node name="AddPropertyButton" type="Button" parent="VBoxContainer/HSplitContainer/VBoxContainer" unique_id=804136833]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("1_pj0bq")
+theme = ExtResource("1_elpvu")
 text = "Add Property"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/HSplitContainer/VBoxContainer" unique_id=1972639480]
@@ -58,7 +58,7 @@ columns = 3
 column_titles_visible = true
 hide_root = true
 select_mode = 1
-script = ExtResource("3_v46h4")
+script = ExtResource("3_tglv5")
 
 [node name="Label" type="Label" parent="VBoxContainer/HSplitContainer" unique_id=803840632]
 layout_mode = 2

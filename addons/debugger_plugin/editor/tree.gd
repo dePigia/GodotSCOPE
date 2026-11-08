@@ -6,7 +6,7 @@ signal watch_toggled(index: int, enabled: bool)
 signal watch_removed(index: int)
 
 
-const COLORS: Array[Color] = [Color("378ADD"), Color("BA7517"), Color("1D9E75"), Color("D4537E")] 
+const COLORS: Array[Color] = [Color("378ADD"), Color("BA7517"), Color("1D9E75"), Color("D4537E")]
 
 const COL_NAME: int = 0
 const COL_VALUE: int = 1
