@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://hc03mv4idl1m"]
 
 [ext_resource type="Theme" uid="uid://bcg2t57nxh0sx" path="res://addons/debugger_plugin/theme/tool_panel_theme.tres" id="1_elpvu"]
-[ext_resource type="Script" uid="uid://bysny1g1op1c7" path="res://addons/debugger_plugin/editor/tool_panel.gd" id="2_dpwiv"]
-[ext_resource type="Script" uid="uid://dngtf6mshnfwk" path="res://addons/debugger_plugin/editor/tree.gd" id="3_tglv5"]
+[ext_resource type="Script" uid="uid://bysny1g1op1c7" path="res://addons/debugger_plugin/editor/panel/tool_panel.gd" id="2_dpwiv"]
+[ext_resource type="Script" uid="uid://dngtf6mshnfwk" path="res://addons/debugger_plugin/editor/panel/tree.gd" id="3_tglv5"]
+[ext_resource type="PackedScene" uid="uid://c5d27enipyk4s" path="res://addons/debugger_plugin/editor/panel/graph_area/scenes/graph_area.tscn" id="4_dpwiv"]
 
 [node name="ToolPanel" type="PanelContainer" unique_id=509274233]
 anchors_preset = 15
@@ -60,6 +61,5 @@ hide_root = true
 select_mode = 1
 script = ExtResource("3_tglv5")
 
-[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer" unique_id=803840632]
+[node name="GraphArea" parent="VBoxContainer/HSplitContainer" unique_id=507322357 instance=ExtResource("4_dpwiv")]
 layout_mode = 2
-text = "pallllleee"

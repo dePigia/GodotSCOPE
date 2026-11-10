@@ -26,6 +26,7 @@ var _picked_path: String = ""
 @onready var add_property_button: Button = $VBoxContainer/HSplitContainer/VBoxContainer/AddPropertyButton
 @onready var tree: Tree = $VBoxContainer/HSplitContainer/VBoxContainer/PropertyTree
 @onready var split: HSplitContainer = $VBoxContainer/HSplitContainer
+@onready var graph: VBoxContainer = $VBoxContainer/HSplitContainer/GraphArea
 
 
 func _ready() -> void:
@@ -155,3 +156,15 @@ func _refresh_tree() -> void:
 
 func _on_split_drag_ended() -> void:
 	EditorInterface.get_editor_settings().set_project_metadata(SETTING_SECTION, SETTING_SPLIT, split.split_offset)
+
+
+func _rebuild_graph() -> void:
+	HYSTORY_STORE.reset(watches.size())
+
+	var names: Array = watches.map(func(w): return "%s.%s" % [w.path, w.prop])
+	graph.set_watches(HYSTORY_STORE, names)
+
+
+func add_batch(start_frame: int, step: int, n_series: int, flat: PackedFloat32Array) -> void:
+	HYSTORY_STORE.append_batch(start_frame, step, n_series, flat)
+	graph.refresh()
