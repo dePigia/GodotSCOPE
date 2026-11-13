@@ -52,4 +52,4 @@ func _get_plugin_name() -> String:
 
 
 func _get_plugin_icon() -> Texture2D:
-	return EditorInterface.get_editor_theme().get_icon("Curve", "EditorIcons")
+	return preload("res://addons/debugger_plugin/icon/GodotSCOPE-logo-white-16px.svg")
