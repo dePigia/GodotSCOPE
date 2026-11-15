@@ -2,10 +2,10 @@
 extends EditorPlugin
 
 
-const AUTOLOAD_NAME: String = "Debug"
-const AUTOLOAD_SCRIPT: String = "res://addons/debugger_plugin/runtime/debugger.gd"
-const TOOL_PANEL: PackedScene = preload("res://addons/debugger_plugin/editor/panel/tool_panel.tscn")
-const BRIDGE: Script = preload("res://addons/debugger_plugin/editor/debugger_bridge.gd")
+const AUTOLOAD_NAME: String = "GodotSCOPE"
+const AUTOLOAD_SCRIPT: String = "res://addons/GodotSCOPE/runtime/godot_scope_checker.gd"
+const TOOL_PANEL: PackedScene = preload("res://addons/GodotSCOPE/editor/panel/tool_panel.tscn")
+const BRIDGE: Script = preload("res://addons/GodotSCOPE/editor/debugger_bridge.gd")
 
 
 var _panel_instance: Control
@@ -48,8 +48,8 @@ func _make_visible(visible: bool) -> void:
 
 
 func _get_plugin_name() -> String:
-	return "Debugger"
+	return "GodotSCOPE"
 
 
 func _get_plugin_icon() -> Texture2D:
-	return preload("res://addons/debugger_plugin/icon/GodotSCOPE-logo-white-16px.svg")
+	return preload("res://addons/GodotSCOPE/icon/GodotSCOPE-logo-white-3.svg")

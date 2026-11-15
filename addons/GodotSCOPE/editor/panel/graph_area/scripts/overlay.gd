@@ -21,20 +21,6 @@ func _ready() -> void:
     _layout()
 
 
-func _gui_input(event: InputEvent) -> void:
-    var mouse_x: float = -1.0
-
-    if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-        mouse_x = event.position.x
-    elif event is InputEventMouseMotion and (event.button_mask & MOUSE_BUTTON_MASK_LEFT) != 0:
-        mouse_x = event.position.x
-    
-    if mouse_x < 0.0 or size.x < 1.0:
-        return
-    
-    scrubbed.emit(clampf(mouse_x / size.x, 0.0, 1.0))
-
-
 func set_cursor(ratio: float) -> void:
     _cursor_ratio = ratio
     _layout()
@@ -61,6 +47,20 @@ func set_markers(ratios: PackedFloat32Array, tips: PackedStringArray) -> void:
         _marker_nodes[i].tooltip_text = tips[i] if i < tips.size() else ""
     
     _layout()
+
+
+func _gui_input(event: InputEvent) -> void:
+    var mouse_x: float = -1.0
+
+    if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+        mouse_x = event.position.x
+    elif event is InputEventMouseMotion and (event.button_mask & MOUSE_BUTTON_MASK_LEFT) != 0:
+        mouse_x = event.position.x
+    
+    if mouse_x < 0.0 or size.x < 1.0:
+        return
+    
+    scrubbed.emit(clampf(mouse_x / size.x, 0.0, 1.0))
 
 
 func _layout() -> void:

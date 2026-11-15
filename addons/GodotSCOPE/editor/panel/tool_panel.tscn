@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://hc03mv4idl1m"]
 
-[ext_resource type="Theme" uid="uid://bcg2t57nxh0sx" path="res://addons/debugger_plugin/theme/tool_panel_theme.tres" id="1_elpvu"]
-[ext_resource type="Script" uid="uid://bysny1g1op1c7" path="res://addons/debugger_plugin/editor/panel/tool_panel.gd" id="2_dpwiv"]
-[ext_resource type="Script" uid="uid://dngtf6mshnfwk" path="res://addons/debugger_plugin/editor/panel/tree.gd" id="3_tglv5"]
-[ext_resource type="PackedScene" uid="uid://c5d27enipyk4s" path="res://addons/debugger_plugin/editor/panel/graph_area/scenes/graph_area.tscn" id="4_dpwiv"]
+[ext_resource type="Theme" uid="uid://bcg2t57nxh0sx" path="res://addons/GodotSCOPE/theme/tool_panel_theme.tres" id="1_elpvu"]
+[ext_resource type="Script" uid="uid://bysny1g1op1c7" path="res://addons/GodotSCOPE/editor/panel/tool_panel.gd" id="2_dpwiv"]
+[ext_resource type="Script" uid="uid://dngtf6mshnfwk" path="res://addons/GodotSCOPE/editor/panel/tree.gd" id="3_tglv5"]
+[ext_resource type="PackedScene" uid="uid://c5d27enipyk4s" path="res://addons/GodotSCOPE/editor/panel/graph_area/scenes/graph_area.tscn" id="4_dpwiv"]
 
 [node name="ToolPanel" type="PanelContainer" unique_id=509274233]
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2

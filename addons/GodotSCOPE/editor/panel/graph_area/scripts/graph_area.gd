@@ -8,7 +8,7 @@ signal cursor_changed(index: int)
 const COLORS: Array[Color] = [Color("378ADD"), Color("BA7517"), Color("1D9E75"), Color("D4537E")]
 
 
-@export var lane_scene: PackedScene = preload("res://addons/debugger_plugin/editor/panel/graph_area/scenes/series_lane.tscn")
+@export var lane_scene: PackedScene = preload("res://addons/GodotSCOPE/editor/panel/graph_area/scenes/series_lane.tscn")
 
 
 var _store

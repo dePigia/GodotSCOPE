@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds7qqjw0g5bab"
-path="res://.godot/imported/GodotSCOPE-logo-white-16px.svg-e14d1bdad3c6b204d6756039c701bce9.ctex"
+uid="uid://dvan8ptjvjfef"
+path="res://.godot/imported/GodotSCOPE-logo-white-3.svg-9dc4cf2c15159dc17360b00592d7597a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/debugger_plugin/icon/GodotSCOPE-logo-white-16px.svg"
-dest_files=["res://.godot/imported/GodotSCOPE-logo-white-16px.svg-e14d1bdad3c6b204d6756039c701bce9.ctex"]
+source_file="res://addons/GodotSCOPE/icon/GodotSCOPE-logo-white-3.svg"
+dest_files=["res://.godot/imported/GodotSCOPE-logo-white-3.svg-9dc4cf2c15159dc17360b00592d7597a.ctex"]
 
 [params]
 

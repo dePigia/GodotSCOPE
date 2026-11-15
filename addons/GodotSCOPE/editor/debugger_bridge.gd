@@ -2,7 +2,7 @@
 extends EditorDebuggerPlugin
 
 
-const PROTOCOL: Script = preload("res://addons/debugger_plugin/protocol.gd")
+const PROTOCOL: Script = preload("res://addons/GodotSCOPE/protocol.gd")
 
 
 var _panel_instance: Control

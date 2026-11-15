@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5d27enipyk4s"]
 
-[ext_resource type="Script" uid="uid://dras1d8ta4ue5" path="res://addons/debugger_plugin/editor/panel/graph_area/scripts/graph_area.gd" id="1_7fiq0"]
-[ext_resource type="Script" uid="uid://bqwjf4616qoe2" path="res://addons/debugger_plugin/editor/panel/graph_area/scripts/overlay.gd" id="2_f5s1i"]
+[ext_resource type="Script" uid="uid://dras1d8ta4ue5" path="res://addons/GodotSCOPE/editor/panel/graph_area/scripts/graph_area.gd" id="1_7fiq0"]
+[ext_resource type="Script" uid="uid://bqwjf4616qoe2" path="res://addons/GodotSCOPE/editor/panel/graph_area/scripts/overlay.gd" id="2_f5s1i"]
 
 [node name="GraphArea" type="VBoxContainer" unique_id=507322357]
 offset_right = 21.0

@@ -5,7 +5,7 @@ extends PanelContainer
 signal config_changed
 
 
-const HYSTORY_STORE: Script = preload("res://addons/debugger_plugin/editor/hystory_store.gd")
+const HYSTORY_STORE: Script = preload("res://addons/GodotSCOPE/editor/hystory_store.gd")
 
 const PROPERTY_TYPES: PackedInt32Array = [TYPE_INT, TYPE_FLOAT, TYPE_BOOL, TYPE_VECTOR2, TYPE_VECTOR3, TYPE_COLOR]
 const SETTING_SECTION: String = "debugger_plugin"
@@ -42,6 +42,23 @@ func _ready() -> void:
 	var settings: EditorSettings = EditorInterface.get_editor_settings()
 	split.split_offset = int(settings.get_project_metadata(SETTING_SECTION, SETTING_SPLIT, 0))
 	split.drag_ended.connect(_on_split_drag_ended)
+
+
+func build_config() -> Array:
+	var w: Array = []
+	for i in watches:
+		w.append([i.path, i.prop])
+
+	var r: Array = []
+	for i in rules.size():
+		r.append([i, rules[i].series, rules[i].op, rules[i].value, rules[i].action])
+	
+	return [_check_every_n, w, r]
+
+
+func add_batch(start_frame: int, step: int, n_series: int, flat: PackedFloat32Array) -> void:
+	HYSTORY_STORE.append_batch(start_frame, step, n_series, flat)
+	graph.refresh()
 
 
 func _pick_node() -> void:
@@ -87,18 +104,6 @@ func _on_prop_picked(prop) -> void:
 	if added:
 		_refresh_tree()
 		config_changed.emit()
-
-
-func build_config() -> Array:
-	var w: Array = []
-	for i in watches:
-		w.append([i.path, i.prop])
-
-	var r: Array = []
-	for i in rules.size():
-		r.append([i, rules[i].series, rules[i].op, rules[i].value, rules[i].action])
-	
-	return [_check_every_n, w, r]
 
 
 func _split_components(node: Node, prop_path: String) -> Array[String]:
@@ -163,8 +168,3 @@ func _rebuild_graph() -> void:
 
 	var names: Array = watches.map(func(w): return "%s.%s" % [w.path, w.prop])
 	graph.set_watches(HYSTORY_STORE, names)
-
-
-func add_batch(start_frame: int, step: int, n_series: int, flat: PackedFloat32Array) -> void:
-	HYSTORY_STORE.append_batch(start_frame, step, n_series, flat)
-	graph.refresh()

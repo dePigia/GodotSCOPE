@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://ckt2b0vywsabl"]
 
-[ext_resource type="Script" uid="uid://bq1oseqsmnkhm" path="res://addons/debugger_plugin/editor/panel/graph_area/scripts/series_lane.gd" id="1_k3eaq"]
-[ext_resource type="Script" uid="uid://byfkkt5m20t4y" path="res://addons/debugger_plugin/editor/panel/graph_area/scripts/lane_plot.gd" id="2_kxxuk"]
+[ext_resource type="Script" uid="uid://bq1oseqsmnkhm" path="res://addons/GodotSCOPE/editor/panel/graph_area/scripts/series_lane.gd" id="1_44pll"]
+[ext_resource type="Script" uid="uid://byfkkt5m20t4y" path="res://addons/GodotSCOPE/editor/panel/graph_area/scripts/lane_plot.gd" id="2_ng0r2"]
 
 [node name="SeriesLane" type="PanelContainer" unique_id=1049782889]
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_k3eaq")
+script = ExtResource("1_44pll")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=107113274]
 layout_mode = 2
@@ -25,4 +25,4 @@ layout_mode = 2
 
 [node name="Plot" type="Control" parent="VBoxContainer" unique_id=1931692689]
 layout_mode = 2
-script = ExtResource("2_kxxuk")
+script = ExtResource("2_ng0r2")

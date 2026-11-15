@@ -1,7 +1,7 @@
 extends Node
 
 
-const PROTOCOL: Script = preload("res://addons/debugger_plugin/protocol.gd")
+const PROTOCOL: Script = preload("res://addons/GodotSCOPE/protocol.gd")
 const BATCH_SAMPLES: int = 10
 
 
@@ -25,14 +25,6 @@ func _ready() -> void:
     EngineDebugger.send_message(PROTOCOL.MSG_INITIALIZE, [])
 
 
-func _on_message(message: String, data: Array) -> bool:
-    if message == PROTOCOL.CONFIG:
-        _apply_config(data)
-        return true
-
-    return false
-
-
 func _physics_process(_delta: float) -> void:
     var frame: int = Engine.get_physics_frames()
     if frame % _check_every_n != 0:
@@ -50,6 +42,14 @@ func _physics_process(_delta: float) -> void:
 
     if _batch_count >= BATCH_SAMPLES:
         _flush()
+
+
+func _on_message(message: String, data: Array) -> bool:
+    if message == PROTOCOL.CONFIG:
+        _apply_config(data)
+        return true
+
+    return false
 
 
 func _apply_config(data: Array) -> void:
