@@ -3,7 +3,7 @@ extends EditorPlugin
 
 
 const AUTOLOAD_NAME: String = "GodotSCOPE"
-const AUTOLOAD_SCRIPT: String = "res://addons/GodotSCOPE/runtime/godot_scope_checker.gd"
+const AUTOLOAD_SCRIPT: String = "res://addons/GodotSCOPE/runtime/autoload.gd"
 const TOOL_PANEL: PackedScene = preload("res://addons/GodotSCOPE/editor/panel/tool_panel.tscn")
 const BRIDGE: Script = preload("res://addons/GodotSCOPE/editor/debugger_bridge.gd")
 
@@ -30,12 +30,12 @@ func _enter_tree() -> void:
 
 
 func _exit_tree() -> void:
-	if _panel_instance:
-		_panel_instance.queue_free()
-		_panel_instance = null
 	if _debugger_bridge:
 		remove_debugger_plugin(_debugger_bridge)
 		_debugger_bridge = null
+	if _panel_instance:
+		_panel_instance.queue_free()
+		_panel_instance = null
 
 
 func _has_main_screen() -> bool:

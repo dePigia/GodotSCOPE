@@ -30,8 +30,8 @@ func _draw() -> void:
     if count < 2:
         return
     
-    var lo: int = INF
-    var hi: int = -INF
+    var lo: float = INF
+    var hi: float = -INF
 
     for i in samples:
         if is_nan(i):
@@ -42,6 +42,7 @@ func _draw() -> void:
     
     if lo == INF:
         return
+    
     if is_equal_approx(lo, hi):
         hi = lo + 1.0
     

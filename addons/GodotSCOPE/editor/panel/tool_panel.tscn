@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5d27enipyk4s" path="res://addons/GodotSCOPE/editor/panel/graph_area/scenes/graph_area.tscn" id="4_dpwiv"]
 
 [node name="ToolPanel" type="PanelContainer" unique_id=509274233]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -22,9 +23,10 @@ layout_mode = 2
 
 [node name="HystoryLabel" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1254729517]
 layout_mode = 2
-text = "LIVE"
+text = "STOPPED"
 
 [node name="HystoryButton" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=161454451]
+visible = false
 layout_mode = 2
 text = "Back To Live"
 
@@ -41,12 +43,22 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
 theme = ExtResource("1_elpvu")
 
-[node name="AddPropertyButton" type="Button" parent="VBoxContainer/HSplitContainer/VBoxContainer" unique_id=804136833]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HSplitContainer/VBoxContainer" unique_id=489130069]
 layout_mode = 2
-size_flags_horizontal = 0
+
+[node name="AddPropertyButton" type="Button" parent="VBoxContainer/HSplitContainer/VBoxContainer/HBoxContainer" unique_id=804136833]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 0
 theme = ExtResource("1_elpvu")
 text = "Add Property"
+
+[node name="AddAlarmButton" type="Button" parent="VBoxContainer/HSplitContainer/VBoxContainer/HBoxContainer" unique_id=1315567208]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("1_elpvu")
+text = "Add Alarm"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/HSplitContainer/VBoxContainer" unique_id=1972639480]
 layout_mode = 2

@@ -49,14 +49,9 @@ func set_watches(watches: Array) -> void:
             group = create_item(root)
             group.set_text(COL_NAME, _node_label(w.path))
 
-            if has_theme_icon("Node2D", "EditorIcons") and w.prop is Node2D:
-                group.set_icon(COL_NAME, get_theme_icon("Node2D", "EditorIcons"))
-            elif has_theme_icon("Control", "EditorIcons") and w.prop is Control:
-                group.set_icon(COL_NAME, get_theme_icon("CircleShape2D", "EditorIcons"))
-            elif has_theme_icon("Node3D", "EditorIcons") and w.prop is Node3D:
-                group.set_icon(COL_NAME, get_theme_icon("Node3D", "EditorIcons"))
-            elif has_theme_icon("Node", "EditorIcons") and w.prop is Node:
-                group.set_icon(COL_NAME, get_theme_icon("Node", "EditorIcons"))
+            var icon: Texture2D = _icon_for(w.get("class", "Node"))
+            if icon:
+                group.set_icon(COL_NAME, icon)
             
             group.set_selectable(COL_NAME, false)
             group.set_selectable(COL_VALUE, false)
@@ -105,6 +100,17 @@ func _on_button_pressed(item: TreeItem, column: int, _id: int, _mouse_button: in
 
 func _node_label(path: String) -> String:
     return "(root of the scene)" if path == "." else path
+
+
+func _icon_for(node_class: String) -> Texture2D:
+    var current: String = node_class
+
+    while current != "":
+        if has_theme_icon(current, "EditorIcons"):
+            return get_theme_icon(current, "EditorIcons")
+        current = ClassDB.get_parent_class(current)
+    
+    return null
 
 
 func _swatch(color: Color) -> Texture2D:

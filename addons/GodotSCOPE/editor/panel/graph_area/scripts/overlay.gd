@@ -5,6 +5,9 @@ extends Control
 signal scrubbed(ratio: float)
 
 
+const CURSOR_SIZE: float = 10.0
+
+
 @export var marker_color: Color = Color("E24B4A")
 
 
@@ -69,6 +72,7 @@ func _layout() -> void:
     
     _cursor_line.visible = _cursor_ratio >= 0.0
     _cursor_line.size.y = size.y
+    _cursor_line.size.x = CURSOR_SIZE
     _cursor_line.position = Vector2(_cursor_ratio * size.x - _cursor_line.size.x * 0.5, 0.0)
 
     for i in _marker_nodes.size():

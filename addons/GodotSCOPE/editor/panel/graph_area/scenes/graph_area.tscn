@@ -4,12 +4,16 @@
 [ext_resource type="Script" uid="uid://bqwjf4616qoe2" path="res://addons/GodotSCOPE/editor/panel/graph_area/scripts/overlay.gd" id="2_f5s1i"]
 
 [node name="GraphArea" type="VBoxContainer" unique_id=507322357]
-offset_right = 21.0
-offset_bottom = 27.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_7fiq0")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1786380972]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Lanes" type="VBoxContainer" parent="MarginContainer" unique_id=324830570]
 layout_mode = 2
@@ -21,23 +25,39 @@ script = ExtResource("2_f5s1i")
 [node name="CursorLine" type="ColorRect" parent="MarginContainer/Overlay" unique_id=210159664]
 visible = false
 layout_mode = 0
-offset_left = -41.0
-offset_right = -1.0
+offset_left = -1157.0
+offset_right = -1147.0
+offset_bottom = 594.0
 
-[node name="TimeAxis" type="HBoxContainer" parent="." unique_id=1107271361]
+[node name="TimeAxis" type="Control" parent="." unique_id=101953891]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="TimeAxis" unique_id=1189867479]
-layout_mode = 2
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 23.0
 
 [node name="Label2" type="Label" parent="TimeAxis" unique_id=137231570]
-layout_mode = 2
+layout_mode = 0
+offset_left = 5.0
+offset_right = 6.0
+offset_bottom = 23.0
 
 [node name="Label3" type="Label" parent="TimeAxis" unique_id=1055982863]
-layout_mode = 2
+layout_mode = 0
+offset_left = 10.0
+offset_right = 11.0
+offset_bottom = 23.0
 
 [node name="Label4" type="Label" parent="TimeAxis" unique_id=99191396]
-layout_mode = 2
+layout_mode = 0
+offset_left = 15.0
+offset_right = 16.0
+offset_bottom = 23.0
 
 [node name="Label5" type="Label" parent="TimeAxis" unique_id=1955286526]
-layout_mode = 2
+layout_mode = 0
+offset_left = 20.0
+offset_right = 21.0
+offset_bottom = 23.0

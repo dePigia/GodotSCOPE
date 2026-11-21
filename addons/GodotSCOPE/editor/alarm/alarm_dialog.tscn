@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://b224fj37fmoib"]
+
+[ext_resource type="Script" uid="uid://ccnnsti5ggf7d" path="res://addons/GodotSCOPE/editor/alarm/alarm_dialog.gd" id="1_x0nb0"]
+
+[node name="AlarmDialog" type="ConfirmationDialog" unique_id=1666189965]
+oversampling_override = 1.0
+title = "New alarm"
+position = Vector2i(0, 36)
+size = Vector2i(380, 185)
+visible = true
+min_size = Vector2i(380, 0)
+ok_button_text = "Create alarm"
+script = ExtResource("1_x0nb0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=242898367]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 372.0
+offset_bottom = 136.0
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=88253211]
+layout_mode = 2
+columns = 2
+
+[node name="PropertyLabel" type="Label" parent="VBoxContainer/GridContainer" unique_id=2126813506]
+layout_mode = 2
+text = "Property"
+
+[node name="PropertyOption" type="OptionButton" parent="VBoxContainer/GridContainer" unique_id=1711698669]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ConditionLabel" type="Label" parent="VBoxContainer/GridContainer" unique_id=680973241]
+layout_mode = 2
+text = "Condition"
+
+[node name="OperatorOption" type="OptionButton" parent="VBoxContainer/GridContainer" unique_id=780859815]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 2
+popup/item_0/text = "is below (<)"
+popup/item_0/id = 0
+popup/item_1/text = "is above (>)"
+popup/item_1/id = 1
+
+[node name="ValueLabel" type="Label" parent="VBoxContainer/GridContainer" unique_id=1664623239]
+layout_mode = 2
+text = "Value"
+
+[node name="ValueSpin" type="SpinBox" parent="VBoxContainer/GridContainer" unique_id=655013916]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -1000000000.0
+max_value = 1000000000.0
+step = 0.01
+allow_greater = true
+allow_lesser = true
+update_on_text_changed = true
+
+[node name="ActionLabel" type="Label" parent="VBoxContainer/GridContainer" unique_id=637343802]
+layout_mode = 2
+text = "Action"
+
+[node name="ActionOption" type="OptionButton" parent="VBoxContainer/GridContainer" unique_id=656047608]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 1
+item_count = 2
+popup/item_0/text = "Only mark it on the graph"
+popup/item_0/id = 0
+popup/item_1/text = "Mark it and pause the game"
+popup/item_1/id = 1
