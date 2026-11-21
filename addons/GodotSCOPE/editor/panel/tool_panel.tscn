@@ -21,11 +21,11 @@ layout_mode = 2
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=659730183]
 layout_mode = 2
 
-[node name="HystoryLabel" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1254729517]
+[node name="HistoryLabel" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1254729517]
 layout_mode = 2
 text = "STOPPED"
 
-[node name="HystoryButton" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=161454451]
+[node name="HistoryButton" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=161454451]
 visible = false
 layout_mode = 2
 text = "Back To Live"

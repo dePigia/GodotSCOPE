@@ -15,10 +15,18 @@ run/main_scene="uid://ckssl0xgq4n24"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GodotSCOPE="*uid://cn66as4eubi2g"
+
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GodotSCOPE/plugin.cfg")
 
 [physics]
 

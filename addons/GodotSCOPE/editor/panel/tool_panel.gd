@@ -5,7 +5,7 @@ extends PanelContainer
 signal config_changed
 
 
-const HYSTORY_STORE: Script = preload("res://addons/GodotSCOPE/editor/hystory_store.gd")
+const HISTORY_STORE: Script = preload("res://addons/GodotSCOPE/editor/history_store.gd")
 const ALARM_DIALOG: PackedScene = preload("res://addons/GodotSCOPE/editor/alarm/alarm_dialog.tscn")
 
 const PROPERTY_TYPES: PackedInt32Array = [TYPE_INT, TYPE_FLOAT, TYPE_BOOL, TYPE_VECTOR2, TYPE_VECTOR3, TYPE_COLOR]
@@ -15,8 +15,7 @@ const SETTING_SPLIT: String = "split_offset"
 
 var watches: Array[Dictionary] = []
 var rules: Array[Dictionary] = []
-
-var store: HYSTORY_STORE = HYSTORY_STORE.new()
+var store: HISTORY_STORE = HISTORY_STORE.new()
 
 
 var _check_every_n: int = 2
@@ -31,8 +30,8 @@ var _cursor_index: int = -1
 var _alarm_dialog: ConfirmationDialog
 
 
-@onready var hystory_label: Label = $VBoxContainer/HBoxContainer2/HystoryLabel
-@onready var hystory_button: Button = $VBoxContainer/HBoxContainer2/HystoryButton
+@onready var history_label: Label = $VBoxContainer/HBoxContainer2/HistoryLabel
+@onready var history_button: Button = $VBoxContainer/HBoxContainer2/HistoryButton
 @onready var add_property_button: Button = $VBoxContainer/HSplitContainer/VBoxContainer/HBoxContainer/AddPropertyButton
 @onready var add_alarm_button: Button = $VBoxContainer/HSplitContainer/VBoxContainer/HBoxContainer/AddAlarmButton
 @onready var tree: Tree = $VBoxContainer/HSplitContainer/VBoxContainer/PropertyTree
@@ -42,13 +41,13 @@ var _alarm_dialog: ConfirmationDialog
 
 func _ready() -> void:
 	add_property_button.text = "Add Property"
-	hystory_button.text = "Back To Live"
+	history_button.text = "Back To Live"
 	_update_label()
 
 	add_property_button.pressed.connect(_pick_node)
 	add_alarm_button.pressed.connect(_on_add_alarm_button_pressed)
 
-	hystory_button.pressed.connect(_go_live)
+	history_button.pressed.connect(_go_live)
 
 	tree.watch_toggled.connect(_on_watch_toggled)
 	tree.watch_removed.connect(_on_watch_removed)
@@ -279,15 +278,15 @@ func _on_cursor_changed(index: int) -> void:
 
 func _update_label() -> void:
 	if not _running:
-		hystory_label.text = "STOPPED"
+		history_label.text = "STOPPED"
 	elif _paused:
-		hystory_label.text = "PAUSED"
+		history_label.text = "PAUSED"
 	elif _live:
-		hystory_label.text = "LIVE"
+		history_label.text = "LIVE"
 	else:
-		hystory_label.text = "HYSTORY"
+		history_label.text = "HISTORY"
 	
-	hystory_button.visible = not _live
+	history_button.visible = not _live
 
 
 func _on_add_alarm_button_pressed() -> void:
